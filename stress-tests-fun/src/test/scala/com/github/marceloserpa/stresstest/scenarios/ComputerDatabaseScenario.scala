@@ -4,6 +4,8 @@ import io.gatling.core.scenario.Simulation
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
+import io.gatling.http.protocol.HttpProtocolBuilder.toHttpProtocol
+import io.gatling.http.request.builder.HttpRequestBuilder.toActionBuilder
 
 class ComputerDatabaseScenario extends Simulation{
   
