@@ -16,8 +16,9 @@ class ComputerDatabaseScenario extends Simulation{
     .userAgentHeader("Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0")
 
   val scn = scenario("ComputerDatabaseGet") 
-    .exec(http("request_1")
-    .get("/")) 
+    .exec(
+      http("request_1").get("/").check(status.is(200))
+    ) 
     .pause(5)
 
   setUp(scn.inject(atOnceUsers(1))).protocols(httpConf)
